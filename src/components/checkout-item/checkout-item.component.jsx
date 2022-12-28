@@ -70,5 +70,4 @@ align-items: center;
   cursor: pointer;
 }
 `
-
 export default CheckoutItem;
