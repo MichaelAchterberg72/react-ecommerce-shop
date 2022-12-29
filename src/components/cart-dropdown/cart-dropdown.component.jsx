@@ -17,46 +17,46 @@ const CartDropdown = () => {
 
     return (
         <CartDropdownContainer>
-            <div className='cart-items'>
+            <CartItems>
               {cartItems.length ? (cartItems.map((item) => (
                 <CartItem key={item.id} cartItem={item}/>
               ))) : (
-                <span>Your cart is empty</span>
+                <EmptyMessage>Your cart is empty</EmptyMessage>
               )}
-              <Button onClick={goToCheckoutHandler}>GO TO CHECKOUT</Button>
-            </div>
+            </CartItems>
+            <Button onClick={goToCheckoutHandler}>GO TO CHECKOUT</Button>
         </CartDropdownContainer>
     )
 };
 
-const CartDropdownContainer = styled.div`
-position: absolute;
-width: 240px;
-height: 340px;
-display: flex;
-flex-direction: column;
-padding: 20px;
-border: 1px solid black;
-background-color: white;
-top: 90px;
-right: 40px;
-z-index: 5;
+export const CartDropdownContainer = styled.div`
+  position: absolute;
+  width: 240px;
+  height: 340px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid black;
+  background-color: white;
+  top: 90px;
+  right: 40px;
+  z-index: 5;
+  ${Button} {
+    margin-top: auto;
+  }
+`;
 
-.empty-message {
+export const EmptyMessage = styled.span`
   font-size: 18px;
   margin: 50px auto;
-}
+`;
 
-.cart-items {
-  height: 240px;
+export const CartItems = styled.div`
+  height: 340px;
   display: flex;
   flex-direction: column;
   overflow: scroll;
-}
-
-button {
-  margin-top: auto;
-}
-`
+  overflow-x: hidden;
+`;
 
 export default CartDropdown;

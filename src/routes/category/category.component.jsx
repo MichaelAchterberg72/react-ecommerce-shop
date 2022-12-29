@@ -22,11 +22,11 @@ const Category = () => {
                 <h2 className="title">{category.toUpperCase()}</h2>
             </TitleContainer>
             <CategoryContainer>
-            {
-                products &&
-                products.map((product) => <ProductCard key={product.id} product={product} />)
-            }
-        </CategoryContainer>
+                {
+                    products &&
+                    products.map((product) => <ProductCard key={product.id} product={product} />)
+                }
+            </CategoryContainer>
         </Fragment>
         
     )
