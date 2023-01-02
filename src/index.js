@@ -7,7 +7,6 @@ import './index.scss';
 import App from './App';
 
 import reportWebVitals from './reportWebVitals';
-import { CartProvider } from './contexts/cart.context';
 import { store } from './store/store';
 
 const rootElement = document.getElementById('root');
@@ -15,10 +14,8 @@ render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <CartProvider>
-          <App />
-        </CartProvider>
-    </BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>,
   rootElement
